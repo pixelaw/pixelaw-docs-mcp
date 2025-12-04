@@ -1,0 +1,32 @@
+{
+  "name": "pixelaw-docs-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for PixeLAW app development guidance",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && npm run copy-guides",
+    "copy-guides": "mkdir -p dist/guides && cp -r src/guides/* dist/guides/",
+    "start": "node dist/index.js",
+    "inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "mcp",
+    "pixelaw",
+    "dojo",
+    "cairo",
+    "starknet"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.3",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "@modelcontextprotocol/inspector": "^0.17.5"
+  }
+}
